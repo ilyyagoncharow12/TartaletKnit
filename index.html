@@ -7,11 +7,21 @@
     <title>Тарталетка вяжет - вязаные игрушки</title>
 
     <!-- Основная иконка для вкладки браузера -->
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
 
-    <link rel="icon" href="favicon/favicon-96x96.png" type="image/x-icon">
-    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Для лучшей совместимости -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png">
+
+
+    <link rel="icon" href="https://static.tildacdn.pub/tild6537-6264-4537-a536-366430656136/2025-05-31_23-10-58_.png" type="image/png">
+
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <!-- <link rel="shortcut icon" href="/favicon/favicon.ico" /> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,44 +46,6 @@
             color: #333;
             background-color: #f9f5f7;
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Снежинки */
-        .snowflakes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .snowflake {
-            position: absolute;
-            background-color: #ffffff;
-            border-radius: 50%;
-            opacity: 0.9;
-            animation: fall linear infinite;
-            filter: blur(0.5px);
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(100vh) translateX(20px) rotate(360deg);
-                opacity: 0;
-            }
         }
 
         h1, h2, h3, h4 {
@@ -86,13 +58,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            position: relative;
-            z-index: 10;
         }
 
         section {
             padding: 80px 0;
-            position: relative;
         }
 
         .btn {
@@ -105,23 +74,6 @@
             cursor: pointer;
             border: none;
             font-family: 'Montserrat', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover:before {
-            left: 100%;
         }
 
         .btn-primary {
@@ -359,7 +311,7 @@
             margin-right: auto;
         }
 
-        /* Социальные сети - добавляем блик для кнопок */
+        /* Социальные сети */
         .social-section {
             text-align: center;
             background: linear-gradient(135deg, rgba(223,116,206,0.1) 0%, rgba(213,142,205,0.1) 100%);
@@ -391,23 +343,6 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-        }
-
-        .social-button:hover:before {
-            left: 100%;
         }
 
         .social-button:hover {
@@ -418,13 +353,6 @@
         .social-icon {
             font-size: 24px;
             margin-right: 15px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .social-button span {
-            position: relative;
-            z-index: 2;
         }
 
         .telegram {
@@ -445,10 +373,6 @@
 
         .avito {
             background: linear-gradient(135deg, #FF6B35 0%, #E85721 100%);
-        }
-
-        .youtube {
-            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
         }
 
         /* Футер */
@@ -611,9 +535,6 @@
     </style>
 </head>
 <body>
-    <!-- Снежинки -->
-    <div class="snowflakes" id="snowflakes"></div>
-
     <!-- Шапка сайта -->
     <header>
         <div class="header-container container">
@@ -713,12 +634,6 @@
                     <i class="fas fa-shopping-cart social-icon"></i>
                     <span>Заказать игрушку на Авито</span>
                 </a>
-
-                <!-- Добавленная кнопка YouTube -->
-                <a href="https://youtube.com/@di_avagyan?si=_yDn2UzvubsYfVLy" target="_blank" class="social-button youtube">
-                    <i class="fab fa-youtube social-icon"></i>
-                    <span>YouTube канал</span>
-                </a>
             </div>
         </div>
     </section>
@@ -736,56 +651,20 @@
                     <a href="#social">Контакты</a>
                 </div>
 
+                <div class="footer-content">
+                <p>Сайт был создан мной: ilxz_12</p>
+
+                </div>
+
                 <div class="copyright">
                     &copy; 2026 Тарталетка вяжет. Все права защищены.
                 </div>
+
             </div>
         </div>
     </footer>
 
     <script>
-        // Создание снежинок ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
-        function createSnowflakes() {
-            const snowflakesContainer = document.getElementById('snowflakes');
-            const snowflakeCount = 150; // Увеличил количество для более интенсивного снегопада
-
-            for (let i = 0; i < snowflakeCount; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-
-                // Случайный размер (от 2 до 8px)
-                const size = Math.random() * 6 + 2;
-                snowflake.style.width = `${size}px`;
-                snowflake.style.height = `${size}px`;
-
-                // Случайная позиция
-                snowflake.style.left = `${Math.random() * 100}vw`;
-
-                // Случайная прозрачность
-                snowflake.style.opacity = Math.random() * 0.7 + 0.3;
-
-                // Случайная скорость (от 3 до 8 секунд)
-                const duration = Math.random() * 5 + 3;
-                snowflake.style.animationDuration = `${duration}s`;
-
-                // Случайная задержка (чтобы снежинки появлялись сразу)
-                snowflake.style.animationDelay = `${Math.random() * 2}s`;
-
-                // Случайное размытие для реалистичности
-                if (Math.random() > 0.5) {
-                    snowflake.style.filter = 'blur(0.8px)';
-                }
-
-                // Добавляем снежинку сразу
-                snowflakesContainer.appendChild(snowflake);
-            }
-        }
-
-        // Создаем снежинки сразу при загрузке страницы
-        window.addEventListener('DOMContentLoaded', () => {
-            createSnowflakes();
-        });
-
         // Мобильное меню
         const menuToggle = document.getElementById('menuToggle');
         const mainMenu = document.getElementById('mainMenu');
