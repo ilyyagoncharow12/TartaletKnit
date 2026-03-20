@@ -7,29 +7,16 @@
     <title>Тарталетка вяжет - вязаные игрушки</title>
 
     <!-- Основная иконка для вкладки браузера -->
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-
-    <!-- Для лучшей совместимости -->
-
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico">
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png">
-
-
-    <link rel="icon" href="https://static.tildacdn.pub/tild6537-6264-4537-a536-366430656136/2025-05-31_23-10-58_.png" type="image/png">
-
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-    <!-- <link rel="shortcut icon" href="/favicon/favicon.ico" /> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon-96x96.png">
+    <link rel="icon" href="favicon/favicon-96x96.png" type="image/x-icon">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Весь ваш CSS код остается без изменений */
         /* Сброс стилей и базовые настройки */
         * {
             margin: 0;
@@ -47,6 +34,7 @@
             color: #333;
             background-color: #f9f5f7;
             overflow-x: hidden;
+            position: relative;
         }
 
         h1, h2, h3, h4 {
@@ -59,10 +47,13 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
 
         section {
             padding: 80px 0;
+            position: relative;
         }
 
         .btn {
@@ -75,6 +66,23 @@
             cursor: pointer;
             border: none;
             font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
         }
 
         .btn-primary {
@@ -344,6 +352,23 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .social-button:hover:before {
+            left: 100%;
         }
 
         .social-button:hover {
@@ -354,6 +379,13 @@
         .social-icon {
             font-size: 24px;
             margin-right: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-button span {
+            position: relative;
+            z-index: 2;
         }
 
         .telegram {
@@ -374,6 +406,10 @@
 
         .avito {
             background: linear-gradient(135deg, #FF6B35 0%, #E85721 100%);
+        }
+
+        .youtube {
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
         }
 
         /* Футер */
@@ -506,7 +542,7 @@
             }
         }
 
-        /* Анимации */
+        /* Анимации появления элементов (без снега) */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -618,7 +654,7 @@
 
                 <a href="https://ru.pinterest.com/di_avagyan/" target="_blank" class="social-button pinterest">
                     <i class="fab fa-pinterest social-icon"></i>
-                    <span>Pinterest </span>
+                    <span>Pinterest</span>
                 </a>
 
                 <a href="https://vk.com/dianaavagyan" target="_blank" class="social-button vk">
@@ -634,6 +670,11 @@
                 <a href="https://m.avito.ru/brands/5fcddffb3e0b5bbae53f4b2c2e84e9b4/all?src=search_seller_info&sellerId=87114920478d76885f774eb199dedcb5" target="_blank" class="social-button avito">
                     <i class="fas fa-shopping-cart social-icon"></i>
                     <span>Заказать игрушку на Авито</span>
+                </a>
+
+                <a href="https://youtube.com/@di_avagyan?si=_yDn2UzvubsYfVLy" target="_blank" class="social-button youtube">
+                    <i class="fab fa-youtube social-icon"></i>
+                    <span>YouTube канал</span>
                 </a>
             </div>
         </div>
@@ -652,15 +693,9 @@
                     <a href="#social">Контакты</a>
                 </div>
 
-                <div class="footer-content">
-                <p>Сайт был создан мной: ilxz_12</p>
-
-                </div>
-
                 <div class="copyright">
                     &copy; 2026 Тарталетка вяжет. Все права защищены.
                 </div>
-
             </div>
         </div>
     </footer>
@@ -670,28 +705,29 @@
         const menuToggle = document.getElementById('menuToggle');
         const mainMenu = document.getElementById('mainMenu');
 
-        menuToggle.addEventListener('click', () => {
-            mainMenu.classList.toggle('active');
-        });
-
-        // Закрытие меню при клике на ссылку
-        const menuLinks = document.querySelectorAll('nav a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mainMenu.classList.remove('active');
+        if (menuToggle && mainMenu) {
+            menuToggle.addEventListener('click', () => {
+                mainMenu.classList.toggle('active');
             });
-        });
+
+            // Закрытие меню при клике на ссылку
+            const menuLinks = document.querySelectorAll('nav a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mainMenu.classList.remove('active');
+                });
+            });
+        }
 
         // Плавная прокрутка для всех ссылок с хэшами
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    e.preventDefault();
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -718,15 +754,23 @@
             observer.observe(el);
         });
 
+        // Также добавляем анимацию для элементов, которые уже видимы
+        const visibleElements = document.querySelectorAll('.fade-in-up');
+        visibleElements.forEach(el => {
+            observer.observe(el);
+        });
+
         // Изменение шапки при скролле
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                }
             }
         });
     </script>
